@@ -10,7 +10,7 @@ namespace AspNetCoreTodo.Services
     {
         public Task<TodoItem[]> GetIncompleteItemsAsync()
         {
-
+            return null;
         }
     }
 }
