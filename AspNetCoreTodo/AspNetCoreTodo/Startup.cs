@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AspNetCoreTodo.Models;
+using AspNetCoreTodo.Services;
 
 namespace AspNetCoreTodo
 {
@@ -35,6 +36,8 @@ namespace AspNetCoreTodo
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMvc();
+            services.AddScoped<ITodoItemService, TodoItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
