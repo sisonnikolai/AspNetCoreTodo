@@ -1,0 +1,15 @@
+﻿@model TodoItem
+@{
+    ViewData["Title"] = "Add New To-do Item";
+}
+
+<form asp-action="AddItem" method="post">
+    <label asp-for="Title">Add a new item:</label>
+    <input asp-for="Title" />
+    <br />
+    <label asp-for="DueAt">Due at:</label>
+    <input asp-for="DueAt" type="date"/>
+    <br />
+    <button type="submit">Add</button>
+</form>
+
