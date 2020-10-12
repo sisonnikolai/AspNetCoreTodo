@@ -36,5 +36,23 @@ namespace AspNetCoreTodo.Controllers
 
             return View(model);
         }
+
+        public async Task<IActionResult> DeleteUser(Guid id)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var selectedUser = await _userManager.Users
+                .Where(x => x.Id == id.ToString())
+                .SingleOrDefaultAsync();
+
+            if (currentUser == selectedUser) 
+            { 
+                return BadRequest("Cannot delete current active user."); 
+            }
+
+            await _userManager.DeleteAsync(selectedUser);
+
+            return RedirectToAction("Index");
+        }
     }
 }

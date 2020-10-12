@@ -8,6 +8,6 @@ namespace AspNetCoreTodo
     public static class Constants
     {
         public const string AdministratorRole = "Administrator";
-        public const string AdministratorEmail = "nik@todo.local";
+        public const string AdministratorEmail = "admin@todo.local";
     }
 }
